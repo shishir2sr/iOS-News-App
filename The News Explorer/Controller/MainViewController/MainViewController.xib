@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="The_News_Explorer" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="lHn-SQ-kaK" id="Iac-M9-wcj"/>
                 <outlet property="tableView" destination="Ay9-09-kE9" id="qpE-kR-qoG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,14 +24,20 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="lHn-SQ-kaK">
+                    <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                    <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Ay9-09-kE9" secondAttribute="bottom" id="7Ec-tD-pKT"/>
                 <constraint firstItem="Ay9-09-kE9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="93d-9T-e3Q"/>
+                <constraint firstItem="lHn-SQ-kaK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="P8H-ur-Gum"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ay9-09-kE9" secondAttribute="trailing" id="cPz-5a-sLr"/>
                 <constraint firstItem="Ay9-09-kE9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="h3l-mK-lul"/>
+                <constraint firstItem="lHn-SQ-kaK" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="qfu-Tp-zF8"/>
             </constraints>
             <point key="canvasLocation" x="46.564885496183201" y="-11.267605633802818"/>
         </view>

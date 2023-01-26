@@ -9,8 +9,8 @@ import Foundation
 
 class MainViewModel {
 //
-//    var isLoadingData: Observable<Bool> = Observable(false)
-//    var dataSource: TrendingMovieModel?
+    var isLoadingData: Observable<Bool> = Observable(false)
+    var dataSource: [Article]?
 //    var movies: Observable<[MovieTableCellViewModel]> = Observable(nil)
     
     func numberOfSections() -> Int {
@@ -23,17 +23,17 @@ class MainViewModel {
 
     
     func getData() {
-//        if isLoadingData.value ?? true {
-//            return
-//        }
+        if isLoadingData.value ?? true {
+            return
+        }
 
-//        isLoadingData.value = true
+        isLoadingData.value = true
         APICaller.getTopArticles { [weak self] result in
-//            self?.isLoadingData.value = false
+            self?.isLoadingData.value = false
 
             switch result {
             case .success(let articles):
-//                self?.dataSource = trendingMovieData
+                self?.dataSource = articles
 //                self?.mapMovieData()
                 print(articles.count)
             case .failure(let err):
