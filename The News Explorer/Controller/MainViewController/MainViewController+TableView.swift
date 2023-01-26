@@ -16,7 +16,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
         }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        mainViewModel.numberOfRows(in: section)
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        mainViewModel.numberOfSections()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

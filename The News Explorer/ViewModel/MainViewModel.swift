@@ -18,7 +18,8 @@ class MainViewModel {
     }
     
     func numberOfRows(in section: Int) -> Int {
-        return 5
+        
+        return dataSource?.count ?? 0
     }
 
     
