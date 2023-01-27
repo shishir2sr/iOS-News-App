@@ -7,13 +7,13 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
         tableView.dataSource = self
         tableView.delegate = self
         tableView.backgroundColor = .clear
-        registerCells()
+        self.registerCells()
     }
     
     func registerCells() {
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        self.tableView.register(ArticleTableCellViewModel.register(), forCellReuseIdentifier: ArticleTableCellViewModel.identifier)
         
-        }
+    }
     
     func reloadTableView(){
         DispatchQueue.main.async {
@@ -30,9 +30,16 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = self.articles[indexPath.row].title
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ArticleTableCellViewModel.identifier, for: indexPath) as? MainTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.setupCell(viewModel: self.articles[indexPath.row])
+        cell.selectionStyle = .none
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        150
     }
     
     

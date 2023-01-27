@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MainTableViewCell: UITableViewCell {
     
@@ -20,14 +21,18 @@ class MainTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
         backView.round()
         backView.addBorder(color: .lightGray, width: 1)
-        
         newsImage.round(5)
+        
+    }
+
+     func setupCell(viewModel: ArticleTableCellViewModel) {
+        self.newsHeadline.text = viewModel.title
+        self.publishedDate.text = viewModel.publishedDate
+        self.source.text = viewModel.sourceName
+        self.newsImage.sd_setImage(with: viewModel.image)
+        
     }
     
 }

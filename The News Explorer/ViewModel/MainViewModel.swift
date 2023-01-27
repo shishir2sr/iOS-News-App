@@ -11,7 +11,7 @@ class MainViewModel {
 //
     var isLoadingData: Observable<Bool> = Observable(false)
     var dataSource: [Article]?
-    var articles: Observable<[Article]> = Observable(nil)
+    var articles: Observable<[ArticleTableCellViewModel]> = Observable(nil)
     
     func numberOfSections() -> Int {
         return 1
@@ -44,18 +44,8 @@ class MainViewModel {
     }
     
     private func mapArticles() {
-        articles.value = self.dataSource
+        articles.value = self.dataSource?.compactMap({ArticleTableCellViewModel(article: $0)})
+        
     }
 
-//    func getMovieTitle(_ movie: Movie) -> String {
-//        return movie.title ?? movie.name ?? ""
-//    }
-//
-//    func retriveMovie(withId id: Int) -> Movie? {
-//        guard let movie = dataSource?.results.first(where: {$0.id == id}) else {
-//            return nil
-//        }
-//
-//        return movie
-//    }
 }

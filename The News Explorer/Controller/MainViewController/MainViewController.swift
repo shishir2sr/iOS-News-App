@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
     var mainViewModel = MainViewModel()
     
     // variables
-    var articles: [Article] = []
+    var articles: [ArticleTableCellViewModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,7 @@ class MainViewController: UIViewController {
     
     fileprivate func configViewDidLoad() {
         title = "The News Explorer"
+        self.view.backgroundColor = .systemGray6
         setupTableView()
        
     }
@@ -56,8 +57,7 @@ class MainViewController: UIViewController {
             
             self.articles = articles
             self.reloadTableView()
-            
-            
+
         }
         
     }
