@@ -60,5 +60,17 @@ class MainViewController: UIViewController {
 
         }
         
+        
     }
+    
+    func openDetails(detailedArticle: ArticleTableCellViewModel){
+            
+                
+                DispatchQueue.main.async {
+                    let detailsViewModel = DetailsViewModel(article: detailedArticle)
+                    let controller = DetailsViewController(viewModel: detailsViewModel)
+                    self.navigationController?.pushViewController(controller, animated: true)
+                }
+            
+        }
 }

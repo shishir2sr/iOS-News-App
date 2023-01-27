@@ -22,7 +22,7 @@ class MainTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         backView.round()
-        backView.addBorder(color: .lightGray, width: 1)
+        backView.addBorder(color: .systemGray6, width: 0.1)
         newsImage.round(5)
         
     }
@@ -31,8 +31,7 @@ class MainTableViewCell: UITableViewCell {
         self.newsHeadline.text = viewModel.title
         self.publishedDate.text = viewModel.publishedDate
         self.source.text = viewModel.sourceName
-        self.newsImage.sd_setImage(with: viewModel.image)
-        
+        self.newsImage.sd_setImage(with: viewModel.image, placeholderImage: UIImage(named: "photo"))
     }
     
 }

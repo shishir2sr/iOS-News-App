@@ -13,6 +13,7 @@ class ArticleTableCellViewModel {
     var publishedDate: String
     var sourceName: String
     var image: URL?
+    var content: String?
     
     // identifier
     static var identifier: String {
@@ -29,13 +30,14 @@ class ArticleTableCellViewModel {
     init(article: Article) {
         
         self.title = article.title
-        self.publishedDate = article.publishedAt.formatted(date: .abbreviated, time: .standard)
+        self.publishedDate = article.publishedAt.formatted(date: .abbreviated, time: .omitted)
         self.sourceName = article.source.name
-        self.image = makeImageURL(article.urlToImage ?? "")
-
+        self.image = makeImageURL(article.urlToImage)
+        self.content = article.content ?? "No data found!"
     }
     
-    private func makeImageURL(_ imageAddress: String) -> URL? {
-        URL(string: imageAddress)
+    private func makeImageURL(_ imageAddress: String?) -> URL? {
+        URL(string: imageAddress ??
+            "https://cpworldgroup.com/wp-content/uploads/2021/01/placeholder.png")
     }
 }
