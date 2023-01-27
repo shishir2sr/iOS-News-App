@@ -15,6 +15,12 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
         
         }
     
+    func reloadTableView(){
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         mainViewModel.numberOfRows(in: section)
     }
@@ -25,7 +31,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "\(indexPath.row)"
+        cell.textLabel?.text = self.articles[indexPath.row].title
         return cell
     }
     

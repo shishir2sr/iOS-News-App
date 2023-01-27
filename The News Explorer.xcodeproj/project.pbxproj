@@ -18,6 +18,9 @@
 		389781302982D8160087A883 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3897812F2982D8160087A883 /* NetworkConstants.swift */; };
 		389781322982D92A0087A883 /* ApiCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389781312982D92A0087A883 /* ApiCaller.swift */; };
 		389781342982DE8B0087A883 /* ObserVable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389781332982DE8B0087A883 /* ObserVable.swift */; };
+		89356553298372030032E0D8 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89356551298372030032E0D8 /* MainTableViewCell.swift */; };
+		89356554298372030032E0D8 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89356552298372030032E0D8 /* MainTableViewCell.xib */; };
+		89356557298376A40032E0D8 /* UiVIewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89356556298376A40032E0D8 /* UiVIewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		3897812F2982D8160087A883 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		389781312982D92A0087A883 /* ApiCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCaller.swift; sourceTree = "<group>"; };
 		389781332982DE8B0087A883 /* ObserVable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserVable.swift; sourceTree = "<group>"; };
+		89356551298372030032E0D8 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		89356552298372030032E0D8 /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
+		89356556298376A40032E0D8 /* UiVIewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiVIewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +72,8 @@
 		389781072982CA8B0087A883 /* The News Explorer */ = {
 			isa = PBXGroup;
 			children = (
+				89356555298376790032E0D8 /* Extensions */,
 				389781282982CF3F0087A883 /* Networking */,
-				389781272982CF370087A883 /* Extensions */,
 				389781262982CF300087A883 /* Resources */,
 				389781252982CF1E0087A883 /* Classes */,
 				389781232982CF0F0087A883 /* Controller */,
@@ -93,6 +99,7 @@
 		389781212982CEDC0087A883 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				89356550298371C40032E0D8 /* MainArticleCell */,
 				389781132982CA8C0087A883 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -138,13 +145,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		389781272982CF370087A883 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		389781282982CF3F0087A883 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +152,23 @@
 				389781312982D92A0087A883 /* ApiCaller.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		89356550298371C40032E0D8 /* MainArticleCell */ = {
+			isa = PBXGroup;
+			children = (
+				89356551298372030032E0D8 /* MainTableViewCell.swift */,
+				89356552298372030032E0D8 /* MainTableViewCell.xib */,
+			);
+			path = MainArticleCell;
+			sourceTree = "<group>";
+		};
+		89356555298376790032E0D8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				89356556298376A40032E0D8 /* UiVIewExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +231,7 @@
 			files = (
 				389781152982CA8C0087A883 /* LaunchScreen.storyboard in Resources */,
 				3897811F2982CC3E0087A883 /* MainViewController.xib in Resources */,
+				89356554298372030032E0D8 /* MainTableViewCell.xib in Resources */,
 				389781122982CA8C0087A883 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,6 +244,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				389781342982DE8B0087A883 /* ObserVable.swift in Sources */,
+				89356553298372030032E0D8 /* MainTableViewCell.swift in Sources */,
+				89356557298376A40032E0D8 /* UiVIewExtension.swift in Sources */,
 				389781302982D8160087A883 /* NetworkConstants.swift in Sources */,
 				389781092982CA8B0087A883 /* AppDelegate.swift in Sources */,
 				389781322982D92A0087A883 /* ApiCaller.swift in Sources */,

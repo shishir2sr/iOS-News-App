@@ -13,9 +13,11 @@ class MainViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    // Main ViewModel
+    // ViewModel
     var mainViewModel = MainViewModel()
     
+    // variables
+    var articles: [Article] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,7 @@ class MainViewController: UIViewController {
     }
     
     func bindViewModel() {
+        // is loading
         mainViewModel.isLoadingData.bind { [weak self] isLoading in
             guard let isLoading = isLoading else {
                 return
@@ -46,6 +49,15 @@ class MainViewController: UIViewController {
                     self?.activityIndicator.stopAnimating()
                 }
             }
+        } // end of isloading
+        
+        mainViewModel.articles.bind {[weak self] articles in
+            guard let self = self, let articles = articles else { return }
+            
+            self.articles = articles
+            self.reloadTableView()
+            
+            
         }
         
     }
