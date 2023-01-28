@@ -9,8 +9,8 @@ import UIKit
 
 class MainViewController: UIViewController {
     // IBOutlets
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     // ViewModel
     var mainViewModel = MainViewModel()
     // Variables
@@ -53,7 +53,6 @@ class MainViewController: UIViewController {
             guard let self = self, let articles = articles else { return }
             self.articles = articles
             self.reloadTableView()
-
         }
     }
     // MARK: Extract Method https://refactoring.guru/smells/long-method

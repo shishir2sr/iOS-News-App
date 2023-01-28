@@ -47,7 +47,7 @@ class MainViewModel {
         }
 
         isLoadingData.value = true
-        APICaller.getTopArticles { [weak self] result in
+        ApiCaller.getTopArticles { [weak self] result in
             self?.isLoadingData.value = false
             switch result {
             case .success(let articles):
@@ -60,7 +60,6 @@ class MainViewModel {
     }
     // MARK: Extract Method https://refactoring.guru/smells/long-method
     private func mapArticles() {
-        articles.value = self.dataSource?.compactMap({ArticleTableCellViewModel(article: $0)})
+        articles.value = self.dataSource?.compactMap({ ArticleTableCellViewModel(article: $0) })
     }
-
 }

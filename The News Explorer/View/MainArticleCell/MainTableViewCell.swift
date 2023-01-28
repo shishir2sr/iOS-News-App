@@ -4,17 +4,16 @@
 //
 //  Created by bjit on 27/1/23.
 //
-
-import UIKit
 import SDWebImage
+import UIKit
 
 class MainTableViewCell: UITableViewCell {
     // Outlets
-    @IBOutlet weak var newsImage: UIImageView!
-    @IBOutlet weak var newsHeadline: UILabel!
-    @IBOutlet weak var publishedDate: UILabel!
-    @IBOutlet weak var source: UILabel!
-    @IBOutlet weak var backView: UIView!
+    @IBOutlet private var newsImage: UIImageView!
+    @IBOutlet private var newsHeadline: UILabel!
+    @IBOutlet private var publishedDate: UILabel!
+    @IBOutlet private var source: UILabel!
+    @IBOutlet private var backView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         backView.round()
@@ -23,9 +22,10 @@ class MainTableViewCell: UITableViewCell {
     }
 
      func setupCell(viewModel: ArticleTableCellViewModel) {
+         let placeHolderImageName = "photo"
         self.newsHeadline.text = viewModel.title
         self.publishedDate.text = viewModel.publishedDate
         self.source.text = viewModel.sourceName
-        self.newsImage.sd_setImage(with: viewModel.image, placeholderImage: UIImage(named: "photo"))
+        self.newsImage.sd_setImage(with: viewModel.image, placeholderImage: UIImage(named: placeHolderImageName))
     }
 }

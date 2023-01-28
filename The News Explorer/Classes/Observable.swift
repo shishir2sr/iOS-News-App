@@ -1,8 +1,8 @@
 //
-//  ObserVable.swift
+//  Observable.swift
 //  The News Explorer
 //
-//  Created by Yeasir Arefin Tusher on 26/1/23.
+//  Created by Yeasir Arefin Tusher on 28/1/23.
 //
 
 import Foundation

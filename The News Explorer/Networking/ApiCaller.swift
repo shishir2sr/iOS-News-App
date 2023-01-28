@@ -1,18 +1,6 @@
-//
-//  ApiCaller.swift
-//  The News Explorer
-//
-//  Created by Yeasir Arefin Tusher on 26/1/23.
-//
-
+// ApiCaller.swift
 import Foundation
-
-enum NetworkError: Error {
-    case urlError
-    case canNotParseData
-}
-
-public class APICaller {
+public class ApiCaller {
     static func getTopArticles(completionHandler: @escaping (_ result: Result<[Article], NetworkError>) -> Void) {
         let urlString = NetworkConstants.shared.apiEndPoint +
                 NetworkConstants.shared.apiKey
@@ -34,4 +22,8 @@ public class APICaller {
             }
         }.resume()
     }
+}
+enum NetworkError: Error {
+    case urlError
+    case canNotParseData
 }
