@@ -7,17 +7,14 @@
 
 import Foundation
 
-class DetailsViewModel{
-    
+class DetailsViewModel {
     var article: ArticleTableCellViewModel
-    
     var articleImage: URL?
     var articleTitle: String
     var articleContent: String
     var articleDate: String
     var articleSource: String
-    
-    init(article: ArticleTableCellViewModel){
+    init(article: ArticleTableCellViewModel) {
         self.article = article
         self.articleTitle = article.title
         self.articleContent = article.content ?? ""
@@ -25,8 +22,6 @@ class DetailsViewModel{
         self.articleSource = article.sourceName
         self.articleImage = article.image
     }
-    
-
     private func makeImageURL(_ url: String) -> URL? {
         URL(string: url)
     }

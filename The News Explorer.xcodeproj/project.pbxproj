@@ -105,8 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				3897811C2982CC3E0087A883 /* MainViewController.swift */,
-				3897811D2982CC3E0087A883 /* MainViewController.xib */,
 				389781292982D2570087A883 /* MainViewController+TableView.swift */,
+				3897811D2982CC3E0087A883 /* MainViewController.xib */,
 			);
 			path = MainViewController;
 			sourceTree = "<group>";
@@ -227,6 +227,7 @@
 				389781022982CA8B0087A883 /* Frameworks */,
 				389781032982CA8B0087A883 /* Resources */,
 				922FFBF47BFE6B0F46FF41DC /* [CP] Embed Pods Frameworks */,
+				38C5607929850DB100F37DDE /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -286,6 +287,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		38C5607929850DB100F37DDE /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		922FFBF47BFE6B0F46FF41DC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
