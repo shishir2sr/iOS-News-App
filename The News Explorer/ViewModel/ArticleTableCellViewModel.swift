@@ -32,8 +32,9 @@ class ArticleTableCellViewModel {
         self.title = article.title
         self.publishedDate = article.publishedAt.formatted(date: .abbreviated, time: .omitted)
         self.sourceName = article.source.name
+        self.content = article.content ?? "Description not found!"
         self.image = makeImageURL(article.urlToImage)
-        self.content = article.content ?? "No data found!"
+        
     }
     
     private func makeImageURL(_ imageAddress: String?) -> URL? {

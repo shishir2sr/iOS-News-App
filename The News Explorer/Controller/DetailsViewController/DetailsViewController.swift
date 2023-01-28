@@ -34,7 +34,8 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         configView()
     }
-
+    
+    // MARK: Extract Method https://refactoring.guru/smells/long-method
     func configView(){
         newsTitle.text = viewModel.articleTitle
         sourceName.text = viewModel.articleSource
