@@ -19,21 +19,28 @@ class MainViewController: UIViewController {
         super.viewWillAppear(animated)
         mainViewModel.getData()
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configViewDidLoad()
         bindViewModel()
     }
+
     // MARK: Extract Method https://refactoring.guru/smells/long-method
+
     // MARK: Refactoring Comment https://refactoring.guru/smells/comments
+
     ///  This method is responsible for configuring  the view
     fileprivate func configViewDidLoad() {
         title = "The News Explorer"
-        self.view.backgroundColor = .systemGray6
+        view.backgroundColor = .systemGray6
         setupTableView()
     }
+
     // MARK: Extract Method https://refactoring.guru/smells/long-method
+
     // MARK: Refactoring Comment https://refactoring.guru/smells/comments
+
     ///  This method is responsible for binding observable objects
     func bindViewModel() {
         // is loading
@@ -49,14 +56,17 @@ class MainViewController: UIViewController {
                 }
             }
         }
-        mainViewModel.articles.bind {[weak self] articles in
+        mainViewModel.articles.bind { [weak self] articles in
             guard let self = self, let articles = articles else { return }
             self.articles = articles
             self.reloadTableView()
         }
     }
+
     // MARK: Extract Method https://refactoring.guru/smells/long-method
+
     // MARK: Refactoring Comment https://refactoring.guru/smells/comments
+
     //// This function calculates the area of a rectangle.
     ///
     /// - Parameters:
@@ -64,10 +74,10 @@ class MainViewController: UIViewController {
     ///   -
     /// - Returns: Void( )
     func openDetails(detailedArticle: ArticleTableCellViewModel) {
-                DispatchQueue.main.async {
-                    let detailsViewModel = DetailsViewModel(article: detailedArticle)
-                    let controller = DetailsViewController(viewModel: detailsViewModel)
-                    self.navigationController?.pushViewController(controller, animated: true)
-                }
+        DispatchQueue.main.async {
+            let detailsViewModel = DetailsViewModel(article: detailedArticle)
+            let controller = DetailsViewController(viewModel: detailsViewModel)
+            self.navigationController?.pushViewController(controller, animated: true)
         }
+    }
 }

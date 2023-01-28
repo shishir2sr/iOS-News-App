@@ -16,12 +16,13 @@ class DetailsViewModel {
     var articleSource: String
     init(article: ArticleTableCellViewModel) {
         self.article = article
-        self.articleTitle = article.title
-        self.articleContent = article.content ?? ""
-        self.articleDate = article.publishedDate
-        self.articleSource = article.sourceName
-        self.articleImage = article.image
+        articleTitle = article.title
+        articleContent = article.content ?? ""
+        articleDate = article.publishedDate
+        articleSource = article.sourceName
+        articleImage = article.image
     }
+
     private func makeImageURL(_ url: String) -> URL? {
         URL(string: url)
     }

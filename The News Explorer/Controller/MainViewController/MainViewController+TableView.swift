@@ -6,36 +6,44 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.backgroundColor = .clear
-        self.registerCells()
+        registerCells()
     }
+
     func registerCells() {
-        self.tableView.register(ArticleTableCellViewModel.register(),
-                                forCellReuseIdentifier: ArticleTableCellViewModel.identifier)
+        tableView.register(ArticleTableCellViewModel.register(),
+                           forCellReuseIdentifier: ArticleTableCellViewModel.identifier)
     }
+
     func reloadTableView() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+    func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
         mainViewModel.numberOfRows(in: section)
     }
-    func numberOfSections(in tableView: UITableView) -> Int {
+
+    func numberOfSections(in _: UITableView) -> Int {
         mainViewModel.numberOfSections()
     }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ArticleTableCellViewModel.identifier,
-                                                       for: indexPath) as? MainTableViewCell else {
+                                                       for: indexPath) as? MainTableViewCell
+        else {
             return UITableViewCell()
         }
-        cell.setupCell(viewModel: self.articles[indexPath.row])
+        cell.setupCell(viewModel: articles[indexPath.row])
         cell.selectionStyle = .none
         return cell
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+
+    func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
         160
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.openDetails(detailedArticle: self.articles[indexPath.row])
+
+    func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
+        openDetails(detailedArticle: articles[indexPath.row])
     }
 }

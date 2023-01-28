@@ -21,11 +21,11 @@ class MainTableViewCell: UITableViewCell {
         newsImage.round(5)
     }
 
-     func setupCell(viewModel: ArticleTableCellViewModel) {
-         let placeHolderImageName = "photo"
-        self.newsHeadline.text = viewModel.title
-        self.publishedDate.text = viewModel.publishedDate
-        self.source.text = viewModel.sourceName
-        self.newsImage.sd_setImage(with: viewModel.image, placeholderImage: UIImage(named: placeHolderImageName))
+    func setupCell(viewModel: ArticleTableCellViewModel) {
+        let placeHolderImageName = "photo"
+        newsHeadline.text = viewModel.title
+        publishedDate.text = viewModel.publishedDate
+        source.text = viewModel.sourceName
+        newsImage.sd_setImage(with: viewModel.image, placeholderImage: UIImage(named: placeHolderImageName))
     }
 }

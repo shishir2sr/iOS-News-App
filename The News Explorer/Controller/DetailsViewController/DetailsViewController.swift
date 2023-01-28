@@ -21,16 +21,21 @@ class DetailsViewController: UIViewController {
         self.viewModel = viewModel
         super.init(nibName: "DetailsViewController", bundle: nil)
     }
+
     @available(*, unavailable)
-    required init?(coder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
     }
+
     // MARK: Refactoring Extract Method https://refactoring.guru/smells/long-method
+
     // MARK: Refactoring Comment https://refactoring.guru/smells/comments
+
     ///  This method is responsible for configuring  theview
     func configView() {
         newsTitle.text = viewModel.articleTitle
