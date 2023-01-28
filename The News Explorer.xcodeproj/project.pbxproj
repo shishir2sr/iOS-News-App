@@ -89,15 +89,11 @@
 		389781072982CA8B0087A883 /* The News Explorer */ = {
 			isa = PBXGroup;
 			children = (
-				89356555298376790032E0D8 /* Extensions */,
-				389781282982CF3F0087A883 /* Networking */,
-				389781262982CF300087A883 /* Resources */,
-				389781252982CF1E0087A883 /* Classes */,
+				38C560842985754400F37DDE /* Shared */,
 				389781232982CF0F0087A883 /* Controller */,
 				389781242982CF170087A883 /* Model */,
 				389781222982CEFB0087A883 /* ViewModel */,
 				389781212982CEDC0087A883 /* View */,
-				389781082982CA8B0087A883 /* AppDelegate.swift */,
 				389781162982CA8C0087A883 /* Info.plist */,
 			);
 			path = "The News Explorer";
@@ -173,6 +169,18 @@
 				389781312982D92A0087A883 /* ApiCaller.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		38C560842985754400F37DDE /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				389781082982CA8B0087A883 /* AppDelegate.swift */,
+				389781252982CF1E0087A883 /* Classes */,
+				389781262982CF300087A883 /* Resources */,
+				389781282982CF3F0087A883 /* Networking */,
+				89356555298376790032E0D8 /* Extensions */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		89356550298371C40032E0D8 /* MainArticleCell */ = {
