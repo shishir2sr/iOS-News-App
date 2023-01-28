@@ -12,6 +12,7 @@ class MainViewModel {
     var isLoadingData: Observable<Bool> = Observable(false)
     var dataSource: [Article]?
     var articles: Observable<[ArticleTableCellViewModel]> = Observable(nil)
+    var errorMessage: Observable<String> = Observable(nil)
 
     // MARK: Refactoring Comment https://refactoring.guru/smells/comments
 
@@ -59,8 +60,8 @@ class MainViewModel {
             case let .success(articles):
                 self?.dataSource = articles
                 self?.mapArticles()
-            case let .failure(err):
-                print(err)
+            case let .failure(error):
+                self?.errorMessage.value = error.localisedDescription
             }
         }
     }

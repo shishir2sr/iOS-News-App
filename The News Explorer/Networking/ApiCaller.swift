@@ -28,4 +28,12 @@ public enum ApiCaller {
 enum NetworkError: Error {
     case urlError
     case canNotParseData
+    var localisedDescription: String {
+        switch self {
+        case .urlError:
+            return "Invalid URL!"
+        case .canNotParseData:
+            return "Internet may not be available!"
+        }
+    }
 }

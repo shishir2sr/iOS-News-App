@@ -18,6 +18,7 @@
 		389781302982D8160087A883 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3897812F2982D8160087A883 /* NetworkConstants.swift */; };
 		389781322982D92A0087A883 /* ApiCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389781312982D92A0087A883 /* ApiCaller.swift */; };
 		38C5607B29853C9400F37DDE /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5607A29853C9400F37DDE /* Observable.swift */; };
+		38C5607E298540F100F37DDE /* MainViewController+UIFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5607D298540F100F37DDE /* MainViewController+UIFunctions.swift */; };
 		67208DD5EA1BB70F684619CF /* Pods_The_News_Explorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E6E9C3615D33FFFC23E4F4 /* Pods_The_News_Explorer.framework */; };
 		89356553298372030032E0D8 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89356551298372030032E0D8 /* MainTableViewCell.swift */; };
 		89356554298372030032E0D8 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89356552298372030032E0D8 /* MainTableViewCell.xib */; };
@@ -44,6 +45,7 @@
 		3897812F2982D8160087A883 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		389781312982D92A0087A883 /* ApiCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCaller.swift; sourceTree = "<group>"; };
 		38C5607A29853C9400F37DDE /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		38C5607D298540F100F37DDE /* MainViewController+UIFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+UIFunctions.swift"; sourceTree = "<group>"; };
 		89356551298372030032E0D8 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		89356552298372030032E0D8 /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		89356556298376A40032E0D8 /* UiVIewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiVIewExtension.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				3897811C2982CC3E0087A883 /* MainViewController.swift */,
+				38C5607D298540F100F37DDE /* MainViewController+UIFunctions.swift */,
 				389781292982D2570087A883 /* MainViewController+TableView.swift */,
 				3897811D2982CC3E0087A883 /* MainViewController.xib */,
 			);
@@ -377,6 +380,7 @@
 				893565602983D4CE0032E0D8 /* DetailsViewModel.swift in Sources */,
 				389781092982CA8B0087A883 /* AppDelegate.swift in Sources */,
 				389781322982D92A0087A883 /* ApiCaller.swift in Sources */,
+				38C5607E298540F100F37DDE /* MainViewController+UIFunctions.swift in Sources */,
 				3897812A2982D2570087A883 /* MainViewController+TableView.swift in Sources */,
 				3897811E2982CC3E0087A883 /* MainViewController.swift in Sources */,
 				89356559298392F40032E0D8 /* ArticleTableCellViewModel.swift in Sources */,
